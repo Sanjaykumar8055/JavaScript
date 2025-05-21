@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body{
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #color{
+        height: 100px;
+        width: 400px;
+        font-size: 90px;
+        border: none;
+        box-shadow: 1px 1px 10px black;
+        border-radius: 5px;
+    }
+    </style>
+</head>
+<body id="body">
+    <input type="text" name="" id="color" oninput="color()">
+    <script>
+        let cor = document.getElementById("color");
+     const color = ()=>{
+        document.getElementById("body").style.backgroundColor = `${cor.value}`
+     }
+    </script>
+</body>
+</html>

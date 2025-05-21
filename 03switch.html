@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="pera"></p>
+    <script>
+         let numbar = prompt("Enter letter 'a to z':")
+         switch (numbar) {
+            case 'a':
+            case 'e':
+            case 'i':
+            case 'o':
+            case 'u':
+                document.getElementById("pera").innerHTML = "vowel";
+                break;  
+
+            default:
+                  document.getElementById("pera").innerHTML = "consonant"
+         }
+    </script>
+</body>
+</html>

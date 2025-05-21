@@ -1,0 +1,2 @@
+// Array vs object defences in JS?
+// Ans : - In JavaScript, arrays and objects are both used to store collections of data, but they have different structures and use cases, Array is store in [] or object is store in {}. Array have multipal methods like push(),pop(),sclice(), ext.., Object have only key pair value.

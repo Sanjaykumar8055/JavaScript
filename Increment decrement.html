@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="inp">o</p><br><br>
+    <button id="one" onclick="incer()">increment</button>
+    <button id="two" onclick="decer()">Decrement</button>
+    <script>
+        let inc = 0
+        const incer = ()=>{
+           inc++
+           document.getElementById('inp').innerHTML= inc
+        }
+        const decer = ()=>{
+            inc--
+            document.getElementById('inp').innerHTML = inc
+        }
+    </script>
+</body>
+</html>

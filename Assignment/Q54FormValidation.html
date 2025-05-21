@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form validtion</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            padding: 100px;
+        
+        }
+        form{
+            width: 80%;
+        }
+        label{
+            display: block;
+            font-size: 20px;
+            font-weight: 500;
+            margin-top: 30px;
+        }
+        input{
+            width: 50%;
+            height: 30px;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <h3>Fill this form</h3>
+    <form method="dialog">
+        <label for="">Enter Frist Name</label>
+        <input type="text" name="" id="fristname">
+        <label for="">Enter Last Name</label>
+        <input type="text" name="" id="lastname">
+        <label for="">Enter Age</label>
+        <input type="number" name="" id="age">
+        <label for="">Enter Phone Number</label>
+        <input type="number" name="" id="phnumber">
+        <label for="">Enter E-mail</label>
+        <input type="email" name="" id="email"><br><br>
+        <button type="button" onclick="formSubmit()">submit</button>
+    </form>
+    <script>
+    const formSubmit=()=> {
+    let firstname = document.getElementById("firstname").value;
+    let lastname = document.getElementById("lastname").value;
+    let age = document.getElementById("age").value;
+    let phnumber = document.getElementById("phnumber").value;
+    let email = document.getElementById("email").value;
+    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    let phonePattern = /^\d{10}$/;
+
+    if (firstname === "") {
+        alert("First Name must be filled out");
+        return false;
+    }
+    if (lastname === "") {
+        alert("Last Name must be filled out");
+        return false;
+    }
+    if (age === "" || isNaN(age) || age < 1 || age > 120) {
+        alert("Please enter a valid age between 1 and 120");
+        return false;
+    }
+    if (!phonePattern.test(phnumber)) {
+        alert("Please enter a valid 10-digit phone number");
+        return false;
+    }
+    if (!emailPattern.test(email)) {
+        alert("Please enter a valid email address");
+        return false;
+    }
+    alert("Form submitted successfully!");
+    return true;
+}
+
+    </script>
+</body>
+</html>

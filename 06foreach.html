@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Higher Order Functions</title>
+</head>
+<body>
+    <p id="one"></p>
+    <script>  // foreach give one by one value 
+        let arr = [50,34,94,65,25,75,35]
+        let pr = '<ul type= "circle">'
+
+        arr.forEach((num)=>{
+           pr += "<li>"+num+"</li>"
+        })
+
+        pr += "</ul>"
+        document.getElementById("one").innerHTML = pr
+        
+    </script>
+</body>
+</html>

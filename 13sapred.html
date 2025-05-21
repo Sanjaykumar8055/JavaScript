@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let arr = ["abc","asd","pqr"]
+    let aar1 = [10,20,30,40]
+    //spreadind[...] 
+    let spreadind = [...aar1]
+    console.log(spreadind);
+    //marging
+    let marging = [...arr,...aar1]
+     document.write(marging +"<br>");
+    //rest of operator
+    let [n1,n2,...n3]=aar1 //frist or second element of arr1 are store in n1 or n2 or othre all are stroe in n3
+    //destructuring  
+    let [c1,c2,c3,c4]=aar1
+     document.write(c1);
+    
+    //try on object
+    let obj = {
+        id:1,
+        name:"abc",
+        age:20,
+        salary:35000,
+    }
+    let{name,age}=obj
+    console.log(name);
+    
+</script>
+</html>

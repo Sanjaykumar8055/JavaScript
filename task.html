@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr = [1,2,3,4,5]
+        for(i=0;i<arr.length;i++){
+             document.write(arr[i]+10 +"<br>");  
+        }
+        let ans1= arr.map((i)=>{
+            return i+10;
+        })
+         document.write(ans1);
+        
+        let even = arr.filter((s)=>{
+            return s%2 == 0;
+        })
+         document.write(even +"<br>");
+         
+         let user = [
+            {
+                id:"101",
+                name:"xyz",
+                age:25,
+                salary:22000
+            },
+            {
+                id:"102",
+                name:"test",
+                age:22,
+                salary:13500
+            },
+            {
+                id:"103",
+                name:"abc",
+                age:18,
+                salary:26000
+            }
+         ]
+         let name = user.forEach((sa)=>{
+             document.write(sa.name + "<br>"+sa.age+"<br>");
+         })
+
+         
+         let sal = user.filter((i)=>{
+             if (i.salary >15000) {
+                 document.write(i.name+"<br> "+i.salary +"<br>");
+                 
+             }   
+         })
+         
+         
+         let ag = user.filter((o)=>{
+            if (o.age>20) {
+                 document.write(o.name+" "+o.age +"<br>");
+                
+            }
+         })
+         let num = [5,20,160,100,60,1]
+        //  const maxnum = Math.max(...num)
+        //  console.log(maxnum)
+         let ansfi = num.reduce((total,k)=>{
+           if (total > k) {
+                k=total
+            }
+            return k;
+         })
+         console.log(ansfi);
+
+         
+    </script>
+</body>
+</html>

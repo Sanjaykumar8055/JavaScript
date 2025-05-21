@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //1) class & object == run time tentity
+    //2) inheritance ==parent child 
+    //3) Abstraction & encapsulation == dta hiding - wrapping up of data into single unit.
+    //4) polymorephism - one name multipal forms
+
+    // Any class have only one constructor
+    // constructor -- is special member function -- this is automatically called.
+
+    //1) Calass & object
+     class exp { 
+        constructor(a,b){
+            console.log("this is class obj");
+            console.log(a);
+            console.log(b);
+            this.t=a;
+            this.s=b
+        }
+        add(){
+            console.log("adition is ="+ (this.t+this.s));
+            
+        }
+     }
+     let obj = new exp(10,20);
+     obj.add()
+
+
+     //2) inheritance    
+
+     class parentclass {
+        constructor() {
+            console.log("parent class is call");
+        }
+        add(r){
+            let pi = 3.14
+            console.log("area of cricle is = "+ (pi*r**2));
+            
+        }
+    }
+
+    class childclass extends parentclass{
+        constructor() {
+            super()
+            console.log("Child class is call");  
+        }
+        addition(a,b,c){
+            // super.add(c);
+            console.log("addition is ="+(a+b+c));
+            
+        }
+    }    
+    let objs = new childclass;
+    objs.addition(10,20,15)
+    objs.add(40) 
+</script>   
+</html>

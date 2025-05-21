@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <input type="text" name="search" id="inp" oninput="searchData(this)">
+    <br><br>
+    <table border="2"cellpadding="10">
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>age</th>
+                <th>course</th>
+                <th>result</th>
+                <th>from</th>
+            </tr>
+        </thead>
+        <tbody id="one">
+        </tbody>
+    </table>
+    
+    <script>
+        let data = [
+            {
+                name:"sanju",
+                age:20,
+                course:"frontEnd",
+                result:"pass",
+                from:"Ahemadabad"
+            },
+            {
+                name:"vipul",
+                age:19,
+                course:"web-design",
+                result:"pass",
+                from:"palanpur"
+            },
+            {
+                name:"jitu",
+                age:20,
+                course:"php",
+                result:"fail",
+                from:"palanpur"
+            },
+            {
+                name:"mahesh",
+                age:19,
+                course:"frontEnd",
+                result:"pass",
+                from:"Surat"
+            },
+            {
+                name:"Bhavesh",
+                age:21,
+                course:"php",
+                result:"pass",
+                from:"Ahemadabad"
+            },
+            {
+                name:"jayesh",
+                age:20,
+                course:"web-design",
+                result:"fail",
+                from:"Ahemadabad"
+            }
+        ]
+
+        //    document.getElementById("inp").addEventListener("oninput",searchData)    
+
+        const searchData = (a)=>{
+          let tx = a.value; 
+          let ar = data.filter((b)=>{
+                 if (b.name.includes(tx) || b.course.includes(tx) || b.from.includes(tx)) {
+                    return b;
+                 }else{
+                    return "";
+                 }  
+          })
+          tbl(ar)
+          data = ar
+        }
+
+        let v =""
+      const tbl = (da)=>{
+        v = "";
+        data.forEach((da)=>{
+            v+= `<tr>
+                <td>${da.name}</td>
+                <td>${da.age}</td>
+                <td>${da.course}</td>
+                <td>${da.result}</td>
+                <td>${da.from}</td>
+                </tr>
+                `
+            })
+            document.getElementById("one").innerHTML = v.toUpperCase();
+        }
+        tbl(data)
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getdata(dataId,getnextdata) {
+            //3s
+            setTimeout(() => {
+               console.log("data",dataId);
+               if (getnextdata) {
+                   getnextdata()
+               }
+            }, 3000);
+        }
+        console.log("getiing data1...");
+                getdata(1,()=>{
+                    console.log("getiing data2...");
+            getdata(2,()=>{
+                console.log("getiing data3...");
+                getdata(3)
+            })
+        })
+        //nested of cllback that is called cllback hell//
+    </script>
+</body>
+</html>

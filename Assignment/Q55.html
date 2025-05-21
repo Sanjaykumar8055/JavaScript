@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            padding: 100px;
+        
+        }
+        form{
+            width: 80%;
+        }
+        label{
+            display: block;
+            font-size: 20px;
+            font-weight: 500;
+            margin-top: 30px;
+        }
+        input{
+            width: 50%;
+            height: 30px;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <label for="email">Enter E-mail</label>
+        <input type="email" id="email">
+        <label for="phnumber">Enter Phone Number</label>
+        <input type="number" id="phnumber">
+        <label for="password">Enter Password</label>
+        <input type="password" id="password">
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" id="confirmPassword"><br><br>
+        <button type="button" onclick="formSubmit()">Submit</button>
+    </form>
+    <script>
+        const formSubmit=()=> {
+    let email = document.getElementById("email").value;
+    let phnumber = document.getElementById("phnumber").value;
+    let password = document.getElementById("password").value;
+    let confirmPassword = document.getElementById("confirmPassword").value;
+    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    let phonePattern = /^\d{10}$/;
+    let passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+    if (!emailPattern.test(email)) {
+        alert("Please enter a valid email address");
+        return false;
+    }
+    if (!phonePattern.test(phnumber)) {
+        alert("Please enter a valid 10-digit phone number");
+        return false;
+    }
+    if (!passwordPattern.test(password)) {
+        alert("Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one number, and one special character");
+        return false;
+    }
+    if (password !== confirmPassword) {
+        alert("Passwords do not match");
+        return false;
+    }
+    alert("Form submitted successfully!");
+    return true;
+}
+
+    </script>
+</body>
+</html>

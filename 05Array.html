@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <P id="one"></P>
+    <p id="two"></p>
+    <p id="three"></p>
+    <p id="four"></p>
+    <p id="five"></p>
+    <script>
+        let arr = [50,20,90,10,85,96,21,3,8]
+        let a = arr.length
+        let b = arr.sort(); // this function is show only frist latter of numbar or word
+
+        let arrs = [50,6,8,70,90,5,45,60,180]   //compare function
+        let c = arrs.sort((a,b)=>{        
+             return(a-b);                        // we can use also (b-a)  
+        })
+        document.getElementById("one").innerHTML ="array length =" + a +"<br>"+"<br>"  +"Array sort ="+ b+"<br>"+"<br>"  +"array sort function = " +c;
+
+        // array reverse
+        let arr1 =[3,80,90,10,85,2,78,35,42,1,]
+        let d = arr1.reverse()
+        document.getElementById("two").innerHTML ="array reverse = " + d;
+        
+        //push for to add to last, pop remove to last
+        let array1 = [50,65,35,78,25,15,92]
+        array1.push(45)         //push
+        let ar = [55,82,75,65,25,48,14,2,7,]
+        ar.pop()
+        document.getElementById("three").innerHTML = "add number or word to last = " + array1 +"<br>"+"<br>"+"remove value or word from last,remov-7 = "+ar
+
+        //unshift add word or nubar at start , shift remove from start
+        let array2 = [45,25,35,62,43,19,]
+        array2.unshift(888)
+        let array3 = [88,65,15,52,85,15,79]
+        array3.shift()
+        document.getElementById("four").innerHTML = "unshift add at start = " + array2 +"<br>" +"<br>" + "shift remove from start = " + array3;
+
+        //splice use for add or remove to at postion
+        const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        fruits.splice(0,0,"lemon"," kiwi")
+         document.getElementById("five").innerHTML = " add word or numbar in array at any postion/indix = " + fruits;
+        
+    </script>
+</body>
+</html>

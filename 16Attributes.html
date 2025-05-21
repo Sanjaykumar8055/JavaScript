@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="one"></div>
+    <script>
+
+        //lets creat new button//
+        let newBtn = document.createElement("button");
+        //give style
+        newBtn.innerHTML= "click Me";
+        newBtn.style.height="50px"
+        newBtn.style.width = "90px"
+        newBtn.style.backgroundColor="black"
+        newBtn.style.color = "white"
+        //append to the div in html
+        let add = document.getElementById('one');
+        add.append(newBtn) 
+    </script>
+</body>
+</html>

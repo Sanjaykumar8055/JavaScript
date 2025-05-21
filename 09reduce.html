@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Higher Order Functions</title>
+</head>
+<body>
+    <p id="one"></p>
+    <script>
+        let count = [41,82,78,65,35,27,92,73]
+        let ts = count.reduce((t,l)=>{
+            return t+l;
+        })
+        
+        let rightred = [41,82,78,65,35,27,92,73] 
+        let riredu = rightred.reduceRight((r,a)=>{
+            return r+a;
+        })
+    document.getElementById("one").innerHTML = "reduce left to right = "+ts+"<br>"+ "reduceRight right to left = "+riredu
+   let v= document.getElementById("one").tagName
+   console.log(v);
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getdata(dataId) {
+           return new Promise((resovle,reject)=>{
+            setTimeout(() => {
+               console.log("data",dataId);
+               resovle('success')
+            }, 1000);
+           }) 
+        }
+        // async function getAlldata(){
+        //     console.log('getting data 1....');
+        //     await getdata(1)
+        //     console.log('getting data 2....');
+        //     await getdata(2)
+        //     console.log('getting data 3....');
+        //     await getdata(3)
+        //     console.log('getting data 4....');
+        //     await getdata(4)
+        // }
+        // getAlldata()
+
+        /*IIFE immediately invoked function 
+        (function(){
+        dosome work here
+       })();*/
+      (async function(){
+            console.log('getting data 1....');
+            await getdata(1)
+            console.log('getting data 2....');
+            await getdata(2)
+            console.log('getting data 3....');
+            await getdata(3)
+            console.log('getting data 4....');
+            await getdata(4)
+        })()
+    </script>
+</body>
+</html>

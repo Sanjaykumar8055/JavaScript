@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .main{
+            height: 600px;
+            width: 500px;
+            border: 2px solid black;
+            padding: 30px;
+        }
+        h3{
+            text-align: center;
+        }
+        h5{
+            text-align: center;
+            margin: 30px;
+        }
+        .mark-main{
+            margin: 30px 0px 30px 0px;
+            display: flex;
+            gap: 110px;
+        }
+        .subject{
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        .mark-inp{
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        #total,#Parecentage{
+            width: 60px;
+            height: 40px;
+            border: none;
+            font-size: 20px;
+        }
+        .tot{
+            font-size: 20px;
+        }
+        .result{
+            width: 75px;
+            height: 35px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+      <h3>Marksheet for Information Technology</h3>
+      <H5>Enter Marks</H5>
+      <div class="mark-main">
+        <div class="subject">
+            <span>1.C language</span>
+            <span>2.C++ language</span>
+            <span>3.database</span>
+            <span>4.HTMl</span>
+            <span>5.CSS</span>
+            <span>6.php</span>
+            <span>7.Core java</span>
+        </div>
+        <div class="mark-inp">
+            <input type="text" name="mark" id="c_lan" class="mark">
+            <input type="text" name="mark" id="c++" class="mark">
+            <input type="text" name="mark" id="database" class="mark">
+            <input type="text" name="mark" id="htmark" class="mark">
+            <input type="text" name="mark" id="css" class="mark">
+            <input type="text" name="mark" id="php" class="mark">
+            <input type="text" name="mark" id="corejava" class="mark">
+            <button class="result" id="result">Result</button>
+        </div>
+      </div>
+      <div style="display: inline;">  <span class="tot">Total is:</span> <input type="text" name="" id="total"><span class="tot"> / 350</span>.</div>
+      <div style="display: inline; margin-left: 30px;">  <span class="tot">Parecentage is:</span> <input type="text" name="" id="Parecentage"></div>
+    </div>
+    <script>
+        let clan = document.getElementById("c_lan")
+        let Cad = document.getElementById("c++")
+        let datab = document.getElementById("database")
+        let htmark = document.getElementById("htmark")
+        let css = document.getElementById("css")
+        let php = document.getElementById("php")
+        let corejava = document.getElementById("corejava")
+
+        document.getElementById("result").addEventListener('click',()=>{
+          let total = +clan.value + +Cad.value + +datab.value + +htmark.value + +css.value + +php.value + +corejava.value;
+          document.getElementById("total").value = +total;
+          let par = (total*100)/350
+          document.getElementById("Parecentage").value = par +"%";
+     })
+    </script>
+</body>
+</html>

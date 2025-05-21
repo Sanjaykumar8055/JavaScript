@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="one"></p>
+    <p id="two"></p>
+    <p id="three"></p>
+    <p id="four"></p>
+    <p id="five"></p>
+    <p id="six"></p>
+    <p id="seven"></p>
+    <p id="eight"></p>
+    <p id="nine"></p>
+    <p id="ten"></p>
+    <p id="eleven"></p>
+    <p id="twelve"></p>
+    <p id="thr"></p>
+    <script>
+        let s = "Sanjaykumar Ashokji Gelot"    
+        document.getElementById("one").innerHTML = "string ="+ "  " + s;
+        let t = s.length
+        document.getElementById("two").innerHTML ="string length ="+"  "+ t;
+
+        let u = s.toUpperCase()
+        document.getElementById("three").innerHTML ="string to uppercase ="+"  "+ u; 
+
+        let v = s. toLowerCase()
+        document.getElementById("four").innerHTML ="string to lowercase ="+"  "+ v;
+
+        let w = s.slice(12)
+        document.getElementById("five").innerHTML ="string slice 12  ="+"  "+ w;
+
+        let x = s.slice(12,19);
+        document.getElementById("six").innerHTML ="string slice 12 to 19 ="+"  "+ x;
+
+        let y = s.slice(-5)
+        document.getElementById("seven").innerHTML ="string slice negative ="+"  "+ y;
+
+        let z = s.substr(12,7) //index or length from indix
+        document.getElementById("eight").innerHTML ="string substr ="+"  "+ z;
+
+        let a = "Vipul Mali"
+        let b = a.charAt(0);
+        document.getElementById("nine").innerHTML ="string character ="+"  "+ b;
+
+        let c = a.concat("\t, "+s)
+        document.getElementById("ten").innerHTML ="string concat ="+"  "+ c;
+
+        let d = a.replace(/i/gi,"t")
+        document.getElementById("eleven").innerHTML ="replace word "+"  = "+ d
+
+        // let e = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque delectus labore est, minima incidunt eius ab sunt quidem? Quia sequi ad natus commodi porro, est libero dicta qui exercitationem dignissimos accusamus mollitia officiis dolorum distinctio asperiores praesentium quisquam vero aspernatur quas possimus nostrum id? Exercitationem cum debitis rerum consequatur architecto."
+        // let f = e.replaceAll(/est/gi,"Hello")
+        // document.write(f)
+        
+        let g = "   trime this string white space remove   "  //remove white space
+        let h = g.trim()   //we can use trimeStare and trimeEnd
+        document.getElementById("twelve").innerHTML = "remove white space = " + h.length;
+        
+        // padend padstart,, rinkalrmw
+        let i = 50;
+        // let j = i.padEnd(5,"0$")    
+        // document.getElementById("thr").innerHTML = "pad end  = " + j;
+        // console.log(j);
+
+        // charAt CharcodeAt
+        let k = a.charAt(6)
+        let l = a.charCodeAt(0)
+        document.getElementById("thr").innerHTML = "charAt = " + k + "<br>" + "ahskey value of V = " + l +"  "+" -charcodeAT"
+         
+        // 1.length
+        // 2.slice()
+        // 3.toUpperCase()
+        // 4.toLowerCase()
+        // 5.replace() , .replaceAll()
+        // 6.charAt()
+        // 7.charCodeAt()
+        // 8.trim() trimend() trimstart()
+        // 9.padEnd()
+        // 10.padstart()
+    </script>
+</body>
+</html>

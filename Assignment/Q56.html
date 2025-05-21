@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="dynamicForm">
+        <div id="formFields">
+            <label for="email">Enter E-mail</label>
+            <input type="email" id="email">
+            <label for="phnumber">Enter Phone Number</label>
+            <input type="number" id="phnumber">
+            <label for="password">Enter Password</label>
+            <input type="password" id="password">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword"><br><br>
+        </div>
+        <button type="button" onclick="addField()">Add Field</button>
+        <button type="button" onclick="formSubmit()">Submit</button>
+    </form>
+    <script>
+    const addField=()=> {
+    let formFields = document.getElementById("formFields");
+    let newField = document.createElement("input");
+    newField.type = "text";
+    newField.placeholder = "New Field";
+    newField.className = "dynamicField";
+    formFields.appendChild(newField);
+}
+
+function formSubmit() {
+    let email = document.getElementById("email").value;
+    let phnumber = document.getElementById("phnumber").value;
+    let password = document.getElementById("password").value;
+    let confirmPassword = document.getElementById("confirmPassword").value;
+    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    let phonePattern = /^\d{10}$/;
+    let passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+    if (!emailPattern.test(email)) {
+        alert("Please enter a valid email address");
+        return false;
+    }
+    if (!phonePattern.test(phnumber)) {
+        alert("Please enter a valid 10-digit phone number");
+        return false;
+    }
+    if (!passwordPattern.test(password)) {
+        alert("Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one number, and one special character");
+        return false;
+    }
+    if (password !== confirmPassword) {
+        alert("Passwords do not match");
+        return false;
+    }
+
+    let dynamicFields = document.getElementsByClassName("dynamicField");
+    for (let field of dynamicFields) {
+        if (field.value === "") {
+            alert("All dynamic fields must be filled out");
+            return false;
+        }
+    }
+
+    alert("Form submitted successfully!");
+    return true;
+}
+
+    </script>
+</body>
+</html>

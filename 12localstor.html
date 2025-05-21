@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .conten {
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="conten">
+        <form name="for1" method="dialog">
+            <label for="data">Enter data</label>
+            <input type="text" name="ctname" id="ctname">
+            <input type="hidden" name="ctid" id="ctid">
+            <input type="submit" name="" id="" onclick="savedata()">
+        </form>
+        <table border="2px" cellpadding="15" style="text-align: center;">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>category</th>
+                    <th>action</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+
+            </tbody>
+        </table>
+    </div>
+    <script>
+        let arr = []
+        const savedata = () => {
+            let localdata = JSON.parse(localStorage.getItem("catinfo"))
+            let len = localdata != null ? localdata.length + 1 : 1;
+            let catgory = document.getElementById("ctname").value;
+            let ctid = document.getElementById("ctid").value
+
+            if (ctid != '') {
+                let updet = localdata.map((i) => {
+                    if (i.id == ctid) {
+                        i.name = catgory;
+                    }
+                    return i;
+                })
+                arr = updet;
+            } else {
+                let obj = {
+                    id: len,
+                    name: catgory
+                }
+                arr.push(obj)
+            }
+
+            localStorage.setItem("catinfo", JSON.stringify(arr))
+            document.getElementById("ctname").value = ""
+            document.getElementById("ctid").value = ""
+            addtotable();
+
+        }
+
+        const addtotable = () => {
+            let t = ""
+            let data = JSON.parse(localStorage.getItem("catinfo"));
+            if (data != null) {
+                data.map((e) => {
+                    t += `<tr>
+                <td>${e.id}</td>
+                <td>${e.name}</td>
+                <td><button onclick="editdata(${e.id})">Edit</button><button onclick="deldata(${e.id})">delet</button></td>
+                </tr>
+                `
+                });
+            }
+            document.getElementById("tbody").innerHTML = t;
+        }
+        const deldata = (id) => {
+            let data = JSON.parse(localStorage.getItem("catinfo"));
+            let fil = data.filter((s) => {
+                return s.id != id
+            })
+            localStorage.setItem("catinfo", JSON.stringify(fil))
+            addtotable();
+            let i = 1
+            let ans = fil.map((s) => {
+                s.id = i++
+                return s;
+            })
+            localStorage.setItem("catinfo", JSON.stringify(ans))
+            addtotable()
+        }
+
+        const editdata = (id) => {
+            let data = JSON.parse(localStorage.getItem("catinfo"));
+            let fil = data.find((s) => {
+                return s.id == id
+            })
+            document.getElementById("ctname").value = fil.name;
+            document.getElementById("ctid").value = id;
+        }
+        addtotable()
+    </script>
+</body>
+
+</html>

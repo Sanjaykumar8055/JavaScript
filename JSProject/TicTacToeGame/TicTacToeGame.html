@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: rgb(17, 108, 110);
+        }
+        .contener{
+            width: auto;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .main{
+            height: 500px;
+            width: 600px;
+            border: none;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+        #win{
+            height: 80px;
+            font-size: 40px;
+        }
+        .btn{
+            height: 130px;
+            width: 163px;
+            background-color: rgb(25, 103, 103);
+            font-size: 100px;
+            /* color: #fb0101; */
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0px 0px 6px black;
+        }
+        #reset{
+            height: 60px;
+            width: 120px;
+            font-size: 40px;
+            background-color: cadetblue;
+            border: none;
+            color: tomato;
+        }
+    </style>
+</head>
+<body>
+  <div class="contener">
+    <h1>Tic Tac Toe </h1>
+    <button id="reset">Reset</button>
+    <div class="main">
+        <button class="btn"></button>
+        <button class="btn"></button>
+        <button class="btn"></button>
+        <button class="btn"></button>
+        <button class="btn"></button>
+        <button class="btn"></button>
+        <button class="btn"></button>
+        <button class="btn"></button>
+        <button class="btn"></button>
+    </div>
+    <p id="win">Winner is</p>
+  </div>
+    <script src="TicTacToeGame.js"></script>
+</body>
+</html>
